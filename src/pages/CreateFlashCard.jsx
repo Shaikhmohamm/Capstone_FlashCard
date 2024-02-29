@@ -3,11 +3,12 @@ import GroupInfo from '../components/GroupInfo'
 import AllTermInfo from '../components/AllTermInfo'
 import { Formik, Form } from 'formik'
 import { useDispatch } from "react-redux";
-import { addFlashcard } from '../Redux/flashCardslice';
+import { addFlashCardData } from '../Redux/flashcardReducers';
 import * as Yup from 'yup';
 
 function CreateFlashCard() {
   const dispatch = useDispatch();
+
   // Form submission logic
   function handlesubmission(values, resetForm, dispatch) {
     // Check if a Group image is uploaded
@@ -27,13 +28,13 @@ function CreateFlashCard() {
 
     const data = {
         // Id for flashcard
-        id : Math.floor(Math.random()*10**15),
+        id: Math.floor(Math.random() * 10 ** 15),
 
         // Saving data flashCardData
         flashCardData: values
     }
     // dispatch to redux store
-    dispatch(addFlashcard(data));
+    dispatch(addFlashCardData(data));
 
     if (localStorage.getItem("flashcards") === null) {
 
@@ -90,6 +91,7 @@ function CreateFlashCard() {
           validationSchema={validationSchema}
           // on submission logic need to be done here
           onSubmit={(values ,{resetForm}) => {
+            // Invoking the handlesubmission fucntion
             handlesubmission(values, resetForm, dispatch)
           }}
         >

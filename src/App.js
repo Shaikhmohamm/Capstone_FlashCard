@@ -1,10 +1,10 @@
 import './App.css';
 import Header from './components/Header';
 import { Route, Routes } from 'react-router-dom';
-import CreateFlashCard from './pages/CreateFlashCard'
-import ShowFlashCard from './pages/ShowFlashCard'
-import {Toaster} from 'react-hot-toast'
-
+import CreateFlashCard from './pages/CreateFlashCard';
+import ShowFlashCard from './pages/ShowFlashCard';
+import ShowAllFlashCard from './components/ShowAllFlashCard'; // Import ShowAllFlashCard
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
@@ -12,10 +12,13 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<CreateFlashCard />} />
-        <Route path='/showflashcard' element={<ShowFlashCard />} />
+        <Route path='/showflashcard' element={<ShowFlashCard />}>
+          {/* Nested route for ShowAllFlashCard */}
+          <Route index element={<ShowAllFlashCard />} />
+        </Route>
         <Route />
       </Routes>
-      <Toaster/>
+      <Toaster />
     </div>
   );
 }
