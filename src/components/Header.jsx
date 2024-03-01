@@ -8,7 +8,7 @@ function Header() {
       <div>
         <img className='w-[10vw]' src={logo} alt="logo" />
       </div>
-      <div>
+      <div className='flex font-bold gap-3'>
         <Link to='/'  >Create Flash Card</Link>
         <Link to='/showflashcard'>Show Flash Card</Link>
       </div>

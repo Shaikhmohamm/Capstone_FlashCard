@@ -10,7 +10,7 @@ function CreateFlashCard() {
   const dispatch = useDispatch();
 
   // Form submission logic
-  function handlesubmission(values, resetForm, dispatch) {
+   const handlesubmission = (values, resetForm, dispatch) => {
     // Check if a Group image is uploaded
     if (values.groupinfo.groupimage === "") {
       toast.error("Please upload a Group image");
@@ -30,9 +30,11 @@ function CreateFlashCard() {
         // Id for flashcard
         id: Math.floor(Math.random() * 10 ** 15),
 
-        // Saving data flashCardData
-        flashCardData: values
+        // Saving data as flashCardData
+        flashCardData: values,
     }
+    
+
     // dispatch to redux store
     dispatch(addFlashCardData(data));
 

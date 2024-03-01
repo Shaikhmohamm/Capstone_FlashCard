@@ -1,14 +1,11 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import { getLocalFlashcardData } from "../Redux/flashcardReducers";
+import {Link} from 'react-router-dom'
 import ShowAllFlashCard from "../components/ShowAllFlashCard";
-
 const ShowFlashCard = () => {
   // Retrieve flashcard data from Redux store
-  const flashCardData = useSelector((state) => state.flashCard) || [];
-  console.log("Flash Card Data:", flashCardData);
-
+  const flashCardData = useSelector((state) => state.flashcards);
 
   // Initialize Redux dispatch function
   const dispatch = useDispatch();
@@ -27,20 +24,14 @@ const ShowFlashCard = () => {
           <Link
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
             to={"/"}>
+            {/* Link to the create flashcard page */}
             Go to Create Flashcard Page
           </Link>
         </div>
       )}
 
-      {/* Render flashcards using ShowAllFlashCard component */}
-      {flashCardData.length > 0 && (
-        <div>
-          {/* Additional content for ShowFlashCard if needed */}
-          <h1>Show Flash Card Component</h1>
-          {/* Render ShowAllFlashCard */}
-          <ShowAllFlashCard />
-        </div>
-      )}
+      {/* Render flashcards using React Router Outlet */}
+      {flashCardData.length > 0 && <ShowAllFlashCard id = {flashCardData.id} />}
     </div>
   );
 };
