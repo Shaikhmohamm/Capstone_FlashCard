@@ -8,6 +8,7 @@ function ShowAllFlashCard() {
   // Getting flash card data from Redux store
 
   const allFlashCardData = useSelector((state)=>state.flashcards)
+  
 
   // Defining a state to show all cards or subset
   const [showAllCards, setShowAllCards] = useState(false);

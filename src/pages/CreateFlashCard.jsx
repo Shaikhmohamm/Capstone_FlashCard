@@ -34,6 +34,7 @@ function CreateFlashCard() {
         flashCardData: values,
     }
     
+    
 
     // dispatch to redux store
     dispatch(addFlashCardData(data));

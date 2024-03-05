@@ -1,29 +1,26 @@
-import './App.css';
-import Header from './components/Header';
-import { Route, Routes, Outlet } from 'react-router-dom';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import CreateFlashCard from './pages/CreateFlashCard';
 import ShowFlashCard from './pages/ShowFlashCard';
+import ShowAllFlashCard from './components/ShowAllFlashCard';
+import ShowCompleteSingleCard from './components/ShowCompleteSingleCard'; // Import the component
+import Header from './components/Header';
 import { Toaster } from 'react-hot-toast';
-import { useSelector } from 'react-redux';
-import Sample from './components/Sample';
 
 function App() {
-let data = useSelector((state)=>state.flashcards)
-
   return (
-    <div>
-      <Header />
+   <div className='bg-red-50 h-screen w-screen'>
+    <Header />
+      <Toaster/>
       <Routes>
-        <Route path='/' element={<CreateFlashCard />} />
-        <Route  path='/showflashcard' element={<ShowFlashCard />}>
-          <Route path={`/showflashcard/${data.id}`} element={<Sample/>} />
+        <Route path="/" element={<CreateFlashCard />} />
+        <Route path="/showflashcard" element={<ShowFlashCard />}>
+          <Route index element={<ShowAllFlashCard />} />
+          <Route path=":id" element={<ShowCompleteSingleCard />} /> {/* Route for ShowCompleteSingleCard */}
         </Route>
-        <Route />
       </Routes>
-      <Toaster />
-      <Outlet/>
-    </div>
-  );
+   </div>
+  )
 }
 
 export default App;

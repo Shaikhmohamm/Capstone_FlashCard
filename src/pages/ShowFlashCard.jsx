@@ -1,11 +1,14 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getLocalFlashcardData } from "../Redux/flashcardReducers";
-import {Link} from 'react-router-dom'
-import ShowAllFlashCard from "../components/ShowAllFlashCard";
+import { Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 const ShowFlashCard = () => {
   // Retrieve flashcard data from Redux store
   const flashCardData = useSelector((state) => state.flashcards);
+  console.log(flashCardData)
+  
 
   // Initialize Redux dispatch function
   const dispatch = useDispatch();
@@ -16,7 +19,7 @@ const ShowFlashCard = () => {
   }, [dispatch]);
 
   return (
-    <div className="mx-auto w-11/12 h-[82vh] flex flex-wrap gap-10 justify-center py-3 overflow-y-scroll overflow-x-hidden scrollbar-thumb-red-500 scrollbar-thin scrollbar-thumb-rounded-full">
+    <div className=" mx-auto w-11/12 h-[82vh] flex flex-wrap gap-10 justify-center py-3 overflow-y-scroll overflow-x-hidden scrollbar-thumb-red-500 scrollbar-thin scrollbar-thumb-rounded-full">
       {/* Display a message when no flashcards are found */}
       {flashCardData.length === 0 && (
         <div className="w-full h-2/3 flex flex-col gap-6 justify-center items-center">
@@ -31,7 +34,11 @@ const ShowFlashCard = () => {
       )}
 
       {/* Render flashcards using React Router Outlet */}
-      {flashCardData.length > 0 && <ShowAllFlashCard id = {flashCardData.id} />}
+      {flashCardData.length > 0 && (
+        <>
+          {flashCardData.length > 0 && <Outlet />}
+        </>
+      )}
     </div>
   );
 };
