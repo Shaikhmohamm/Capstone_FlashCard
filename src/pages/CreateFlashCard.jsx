@@ -78,7 +78,7 @@ function CreateFlashCard() {
   )
 
   return (
-    <div>
+    <div className='bg-red-50'>
       <div>
         <Formik
           initialValues={
@@ -112,7 +112,7 @@ function CreateFlashCard() {
                 setFieldValue(`terminfo[${idx}].termimage`, value);
               }}
               />
-              <div className='text-center'>
+              <div className='text-center mt-2'>
                 <button type='submit'
                   className='rounded-md text-lg bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-10'>
                   Create FlashCard

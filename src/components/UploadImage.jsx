@@ -70,7 +70,7 @@ function UploadImage({values,updateimagepreview, index}) {
 					<img
 						src={values}
 						alt="preview"
-						className="w-2/3 h-1/2 object-cover  lg:w-fit lg:h-20"
+						className="w-1/3 h-1/2 object-cover  lg:w-fit lg:h-20"
 					/>
 					<RiCloseCircleFill
 						className={"text-2xl cursor-pointer text-red-500 "}

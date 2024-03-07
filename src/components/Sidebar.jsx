@@ -1,15 +1,18 @@
-import React from 'react';
 
-const Sidebar = ({ cards, onSelectCard, selectedCard }) => {
+
+const Sidebar = ({ terminfo, active, setActive }) => {
+ 
+
   return (
-    <div className="md:w-1/6 mt-5 bg-white p-4 md-rounded ">
+    <div className="md:w-1/6 mt-5 bg-white p-4 rounded-xl">
       <h2 className="text-xl font-bold mb-4">Flash Cards</h2>
+      <hr className='border border-slate-200 mb-2' />
       <ul>
-        {cards.map((term, index) => (
+        {terminfo.map((term, index) => (
           <li
-            key={index}
-            onClick={() => onSelectCard(term)}
-            className={`cursor-pointer rounded-lg py-1 px-2 mb-2 ${selectedCard === term ? 'bg-gray-300' : ''}`}
+            onClick={() => setActive(index)}
+            className={`cursor-pointer hover:text-red-500 rounded-lg py-1 px-2 mb-2 
+            ${active === index ? 'text-red-500 font-bold' : ''}`}
           >
             {term.termname}
           </li>

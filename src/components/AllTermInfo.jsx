@@ -7,8 +7,6 @@ import toast from 'react-hot-toast'
 function AllTermInfo({values, updateimagepreview}) {
   const [editMode, setEditMode] = useState([]);
 
-    
-
    function handleclick(index){
     if (editMode[index]) {
         toast.success(`Edit mode enabled for Term ${index + 1}`);
@@ -22,12 +20,12 @@ function AllTermInfo({values, updateimagepreview}) {
       });
    }
   return (
-    <div>
+    <div className='mx-10 bg-red-50'>
       <FieldArray
       name='terminfo'
       disabled={true}
       render={(arrayHelper)=>(
-        <div>
+        <div className='bg-white'>
           {values.map((term, index) => (
             <SingleTermInfo
               arrayHelper={arrayHelper}
@@ -42,7 +40,7 @@ function AllTermInfo({values, updateimagepreview}) {
           ))}
           <button
             type="button"
-            className="text-blue-500 font-bold hover:text-blue-700 md:text-lg"
+            className="mx-5 mt-10 sm:my-10 md:my-5 text-blue-500 font-bold hover:text-blue-700 md:text-lg"
             onClick={() =>
               arrayHelper.push({
                 termname: "",

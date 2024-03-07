@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 const ShowFlashCard = () => {
   // Retrieve flashcard data from Redux store
   const flashCardData = useSelector((state) => state.flashcards);
-  console.log(flashCardData)
   
 
   // Initialize Redux dispatch function

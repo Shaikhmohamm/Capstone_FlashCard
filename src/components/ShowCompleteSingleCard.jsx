@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import CardDetails from './CardDetails';
 import RightSidebar from './RightSidebar';
+import { MdOutlineKeyboardBackspace } from "react-icons/md";
 
 const ShowCompleteSingleCard = () => {
   // Getting the data using useSelector hook
@@ -13,29 +14,37 @@ const ShowCompleteSingleCard = () => {
   // To match the id
   const idToMatch = parseInt(id);
   const currentCard = data.find((card) => card.id === idToMatch);
-  console.log(currentCard)
 
-  // Destructuring to avoid complexity
+  // Destructuring to get groupinfo, terminfo
   const { groupinfo, terminfo } = currentCard.flashCardData;
 
-  // useState to handle currentcard
-  const [selectedCard, setSelectedCard] = useState(currentCard);
 
-  // 
-  const handleSelectCard = (card) => {
-    setSelectedCard(card);
-  };
+  // for showing active term
+  const [active, setActive] = useState(0)
 
 
   return (
     <div>
-      <div className='text-center'>
-        <h1 className="text-2xl font-bold mb-4">{groupinfo.groupname}</h1>
-        <p className="mb-4">{groupinfo.groupdescription}</p>
+      <div className='flex'>
+        <Link to='/showflashcard'>
+          <MdOutlineKeyboardBackspace className='mt-2 text-slate-500 text-4xl hover:text-red-500' />
+        </Link>
+        <div className='ml-5'>
+          <h1 className="text-3xl font-bold mb-4">{groupinfo.groupname}</h1>
+          <p className="mb-4 block">{groupinfo.groupdescription}</p>
+        </div>
       </div>
       <div className="flex gap-5 h-[60vh]">
-        <Sidebar cards={terminfo} onSelectCard={handleSelectCard} selectedCard={selectedCard} />
-        <CardDetails terminfo={terminfo} selectedCard={selectedCard} />
+        <Sidebar
+          terminfo={terminfo}
+          active={active}
+          setActive={setActive}         
+        />
+        <CardDetails
+          terminfo={terminfo}
+          active={active}
+          setActive={setActive} 
+        />
         <RightSidebar currentCard={currentCard} />
       </div>
     </div>

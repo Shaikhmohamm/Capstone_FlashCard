@@ -1,59 +1,49 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
-const CardDetails = ({ terminfo, selectedCard }) => {
-  const [currentTermIndex, setCurrentTermIndex] = useState(0);
+const CardDetails = ({ terminfo, active, setActive }) => {
+  return (
+    <div>
+      {/* Term content */}
+				<div className="w-full h-5/6 p-2 md:p-5 flex-col flex rounded-xl items-center justify-evenly bg-white md:flex-row">
+					{/* Term image */}
+					<img
+						srcSet={terminfo[active].termimage}
+						className=" hidden md:block md:w-[45%] md:h-3/4"
+						alt=""
+					/>
+					{/* Term description */}
+					<p className="w-11/12 break-all text-justify h-full text-[12px] md:w-[45%] overflow-hidden  md:h-3/4 lg:text-base">
+						{terminfo[active].termdescription}
+					</p>
+				</div>
 
-  useEffect(() => {
-    // Reset currentTermIndex when selectedCard changes
-    const index = terminfo.findIndex(term => term === selectedCard);
-    if (index !== -1) {
-      setCurrentTermIndex(index);
-    } else {
-      setCurrentTermIndex(0);
-    }
-  }, [selectedCard, terminfo]);
 
-  const nextTerm = () => {
-    if (currentTermIndex < terminfo.length - 1) {
-      setCurrentTermIndex(currentTermIndex + 1);
-    } else {
-      setCurrentTermIndex(0);
-    }
-  };
-
-  const prevTerm = () => {
-    if (currentTermIndex > 0) {
-      setCurrentTermIndex(currentTermIndex - 1);
-    } else {
-      setCurrentTermIndex(terminfo.length - 1);
-    }
-  };
-
-return (
-  <div className="bg-white p-4 w-1/2">
-  <div className="text-center">
-    <p className="text-gray-700">{terminfo[currentTermIndex].termdescription}</p>
-    {terminfo[currentTermIndex].termimage && (
-      <div className="mt-5">
-        <img
-          src={terminfo[currentTermIndex].termimage}
-          alt={terminfo[currentTermIndex].termname}
-          className="mx-auto w-3/4 rounded-lg"
-        />
-      </div>
-    )}
-  </div>
-  <div className="flex justify-center mt-4">
-    <button onClick={prevTerm} className="px-2 py-1 mr-2 bg-gray-300 rounded-lg">
-      {"<"}
-    </button>
-    <button onClick={nextTerm} className="px-2 py-1 bg-gray-300 rounded-lg">
-      {">"}
-    </button>
-  </div>
-</div>
-
-);
+        {/* Navigation buttons */}
+				<div className="w-2/12 mx-auto flex justify-center items-center h-1/6">
+					{/* Previous button */}
+					<button
+						disabled={active === 0}
+						onClick={() => setActive(active - 1)}
+						className={
+							" w-fit h-fit text-black cursor-pointer hover:text-red-500 disabled:text-red-200 "
+						}>
+						<IoIosArrowBack className="w-7 h-7" />
+					</button>
+					{/* Page indicator */}
+					<p className="w-10/12 h-fit text-center ">
+						{active + 1}/{terminfo.length}
+					</p>
+					{/* Next button */}
+					<button
+						disabled={active === terminfo.length - 1}
+						onClick={() => setActive(active + 1)}
+						className=" w-fit h-fit text-black cursor-pointer hover:text-red-500 disabled:text-red-200">
+						<IoIosArrowForward className="w-7 h-7" />
+					</button>
+				</div>
+    </div>
+  );
 };
 
 export default CardDetails;
