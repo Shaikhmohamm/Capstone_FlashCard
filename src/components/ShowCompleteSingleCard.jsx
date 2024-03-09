@@ -24,28 +24,32 @@ const ShowCompleteSingleCard = () => {
 
 
   return (
-    <div>
+    <div className='w-full mx-2 md:mx-10'>
+
       <div className='flex'>
         <Link to='/showflashcard'>
-          <MdOutlineKeyboardBackspace className='mt-2 text-slate-500 text-4xl hover:text-red-500' />
+          <MdOutlineKeyboardBackspace className='text-slate-500 text-2xl md:text-4xl hover:text-red-500' />
         </Link>
-        <div className='ml-5'>
-          <h1 className="text-3xl font-bold mb-4">{groupinfo.groupname}</h1>
+        <div className='ml-2 md:ml-5'>
+          <h1 className="text-xl md:text-3xl font-bold mb-4">{groupinfo.groupname}</h1>
           <p className="mb-4 block">{groupinfo.groupdescription}</p>
         </div>
       </div>
-      <div className="flex gap-5 h-[60vh]">
-        <Sidebar
-          terminfo={terminfo}
-          active={active}
-          setActive={setActive}         
-        />
-        <CardDetails
-          terminfo={terminfo}
-          active={active}
-          setActive={setActive} 
-        />
-        <RightSidebar currentCard={currentCard} />
+      
+      <div className="w-full md:flex gap-3 ">
+        <div className='w-full flex justify-center gap-5'>
+          <Sidebar 
+            terminfo={terminfo}
+            active={active}
+            setActive={setActive}
+          />
+          <CardDetails
+            terminfo={terminfo}
+            active={active}
+            setActive={setActive}
+          />
+        </div>
+          <RightSidebar currentCard={currentCard} />
       </div>
     </div>
   );

@@ -40,7 +40,7 @@ function AllTermInfo({values, updateimagepreview}) {
           ))}
           <button
             type="button"
-            className="mx-5 mt-10 sm:my-10 md:my-5 text-blue-500 font-bold hover:text-blue-700 md:text-lg"
+            className="mx-5 mt-16 sm:my-10 md:my-5 text-blue-500 font-bold hover:text-blue-700 md:text-lg"
             onClick={() =>
               arrayHelper.push({
                 termname: "",

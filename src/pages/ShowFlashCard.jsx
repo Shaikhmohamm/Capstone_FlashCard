@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 const ShowFlashCard = () => {
-  // Retrieve flashcard data from Redux store
+  // Retrieve flashcard data from Redux store using useSelector hook
   const flashCardData = useSelector((state) => state.flashcards);
   
 
@@ -18,11 +18,11 @@ const ShowFlashCard = () => {
   }, [dispatch]);
 
   return (
-    <div className=" mx-auto w-11/12 h-[82vh] flex flex-wrap gap-10 justify-center py-3 overflow-y-scroll overflow-x-hidden scrollbar-thumb-red-500 scrollbar-thin scrollbar-thumb-rounded-full">
+    <div className="mx-auto w-full h-[82vh] flex flex-wrap gap-10 justify-center py-3 overflow-y-scroll overflow-x-hidden scrollbar-thin scrollbar-thumb-rounded-full">
       {/* Display a message when no flashcards are found */}
       {flashCardData.length === 0 && (
         <div className="w-full h-2/3 flex flex-col gap-6 justify-center items-center">
-          <h1 className="text-3xl font-bold">No FlashCard Found</h1>
+          <h1 className="text-xl sm:text-3xl font-bold">No FlashCard Found</h1>
           <Link
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
             to={"/"}>

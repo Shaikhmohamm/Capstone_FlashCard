@@ -9,7 +9,7 @@ import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
-   <div className='bg-red-50 w-screen h-screen'>
+   <div className='bg-red-50 w-screen overflow-x-hidden h-screen'>
     <Header />
       <Toaster/>
       <Routes>

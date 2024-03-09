@@ -2,6 +2,12 @@ import React, { useState } from 'react';
 import jsPDF from 'jspdf';
 import 'jspdf-autotable';
 import Modal from './Modal'; // Import the Modal component
+import { GoShare } from "react-icons/go";
+import { IoCloudDownloadOutline } from "react-icons/io5";
+import { PiPrinter } from "react-icons/pi";
+
+
+
 
 const RightSidebar = ({ currentCard }) => {
 
@@ -57,16 +63,29 @@ const RightSidebar = ({ currentCard }) => {
 
 
   return (
-    <div className="flex flex-col items-center">
-      <button onClick={openModel} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-2">
+    <div className="w-full md:w-1/6 mt-12 md:mt-1 flex flex-row md:flex md:flex-col md:gap-8 justify-center bg-red-50 rounded-lg ">
+      <button onClick={openModel}
+        className="flex justify-center bg-white font-bold md:w-full mx-1 md:mx-3 p-4 rounded-xl 
+        transition-all transition-duration-500 ease-in hover:bg-red-500 hover:text-white">
+        <GoShare className='hidden md:block mr-2 text-xl' />
         Share
       </button>
-      <button onClick={handleDownload} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mb-2">
+
+      <button 
+      className="flex justify-center bg-white font-bold  md:w-full mx-1 md:mx-3 p-4 rounded-xl 
+      transition-all transition-duration-500 ease-in hover:bg-red-500 hover:text-white"
+      onClick={handleDownload}>
+        <IoCloudDownloadOutline className='hidden md:block mr-2 text-xl'/>
         Download
       </button>
-      <button onClick={handlePrint} className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded mb-2">
+
+      <button onClick={handlePrint}
+        className="flex justify-center bg-white font-bold  md:w-full mx-1 md:mx-3 p-4 rounded-xl 
+      transition-all transition-duration-500 ease-in hover:bg-red-500 hover:text-white">
+        <PiPrinter className='hidden md:block mr-2 text-xl' />
         Print
       </button>
+      {/* Modal component */}
       {showModal && <Modal setShowModal={setShowModal} />}
     </div>
   );
