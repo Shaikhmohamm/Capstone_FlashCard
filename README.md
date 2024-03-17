@@ -1,70 +1,146 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# FLASHCARD GENERATOR
 
-## Available Scripts
+Flashcard Generator is a web application that allows users to create, manage, and share custom flashcards. It provides an intuitive interface and a comprehensive set of features to enhance the learning process. The primary goal of this project is to create a seamless user experience for studying and reinforcing knowledge through interactive digital flashcards.
 
-In the project directory, you can run:
 
-### `npm start`
+## Table of content
+- [📖 Table of Contents](#📖-table-of-contents)
+- [📍 Overview](#📍-overview)
+- [📦 Features](#📦-features)
+- [📂 repository Structure](#📂-repository-structure)
+- [🚀 Getting Started](#🚀-getting-started)
+  - [🔧 Installation](#🔧-installation)
+  - [🤖 Running flashcard-generator](#🤖-running-flashcard-generator)
+  - [🌐 Deployment Link](#🌐-deployment-link)
+  - [🧪 Tests](#🧪-tests)
+- [🤝 Contributors](#🤝-Contributors)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📍 Overview
+This is A Almabetter Capstone project for a Front-end module. The Primary goal of creating this web app is getting the details from users and creating a card from that information, which can be used to learn concepts for students. This is easy and modular information along with images in the form of cards and can contain multiple terms.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📦 Features
 
-### `npm run build`
+- Create Flashcards :- 
+    This section allow users to inetract with the page and you can given the name & image to your card. And you can add required number of information in the term section along with images.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Live previews :-
+    Yes, when you select an image it will give a small preview of the selected image, which makes it more user interactive. Also you can click on the cancel button to reselect the image again. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Validation :-
+    One of the important feature is validation, whatever information user putting in the input it has some character limits.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Persistent data :-
+    The application uses local storage to store user data persistently. This means that users can seamlessly pick up where they left off, and their created flashcards will be as it is even after closing the browser or navigating away from the application.
+    
+- Share, Print & Download :-
+    Last but not the least, in the generation of social media we must need a app which can share, download & print whatever we have created. The good part is this app all these features.
 
-### `npm run eject`
+## 📂 Repository Structure
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```sh
+└── flash-card
+      ├── package-lock.json
+      ├── package.json
+      |
+      ├── public
+      |      └── index.html
+      |
+      |
+      ├──  src
+      |      ├── App.js
+      |      ├── __tests__
+      |      |    ├── GroupInfo.test.js
+      |      |    ├── Header.test.js
+      |      |    ├── Modal.test.js
+      |      |    ├── RightSideBar.test.js
+      |      |
+      |      ├── asstes/
+      |      |
+      |      ├── componenets
+      |      |      ├── AllTermInfo.jsx
+      |      |      ├── CardDetails.jsx
+      |      |      ├── Error.jsx
+      |      |      ├── GroupInfo.jsx
+      |      |      ├── Header.jsx
+      |      |      ├── Modal.jsx
+      |      |      ├── RenderCard.jsx
+      |      |      ├── RightSidebar.jsx
+      |      |      ├── ShowAllFlashCard.jsx
+      |      |      ├── ShowCompleteSingleCard.jsx
+      |      |      ├── Sidebar.jsx
+      |      |      ├── SingleTermInfo.jsx
+      |      |      └── UploadImage.jsx
+      |      |
+      |      ├── pages
+      |      |      ├── CreateFlashCard.jsx
+      |      |      └── ShowFlashCard.jsx
+      |      |
+      |      |
+      |      ├── Redux
+      |      |      ├── flashcardReducers.js
+      |      |      └── store.js
+      |      |
+      |      ├── index.css
+      │      ├── index.js
+      |      | 
+      |      |
+      |      ├── reportWebVitals.js
+      |      └── setupTests
+      |
+      └── tailwind.config.js
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 🌐 Deployment Link
+      You can visit the app live from [click here] 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- ### 🔧 Installation
+1. Clone the flashcard-generator repository:
 
-## Learn More
+```sh
+git clone https://github.com/Shaikhmohamm/Capstone_FlashCard.git
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. Change to the project directory:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```sh
+cd flash-card
+```
 
-### Code Splitting
+3. Install the dependencies:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```sh
+npm install
+```
 
-### Analyzing the Bundle Size
+### 🤖 Running flash-card
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```sh
+npm start
+```
 
-### Making a Progressive Web App
+### 🧪 Tests
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```sh
+npm run test
+```
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Contributors
+The only contributor of the project is myself details as follows
+1. Shaikh Mohammed Zaid
+[GitHub](https://github.com/Shaikhmohamm) |
+[LinkedIn](https://www.linkedin.com/in/zaid-shaikh-37b1b6171/) |
+[YouTube]()
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+## Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+For any inquiries or support, please contact us at [GitHub](https://twitter.com/lokeshkavisth)
