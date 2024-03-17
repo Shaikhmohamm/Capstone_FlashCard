@@ -20,7 +20,7 @@ function AllTermInfo({values, updateimagepreview}) {
       });
    }
   return (
-    <div className='mx-10 bg-red-50'>
+    <div className='mx-5 md:mx-10 bg-red-50'>
       <FieldArray
       name='terminfo'
       disabled={true}

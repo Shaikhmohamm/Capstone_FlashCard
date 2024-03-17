@@ -16,7 +16,7 @@ const CardDetails = ({ terminfo, active, setActive }) => {
         <p className="mt-5 w-11/12 break-all text-justify h-full text-[12px] md:w-[45%] overflow-hidden md:h-3/4 lg:text-base">
           {terminfo[active].termdescription}
         </p>
-      </div>
+      </div>  
 
 
       {/* Navigation buttons */}

@@ -4,7 +4,7 @@ import { ErrorMessage, Field } from 'formik'
 
 function GroupInfo({ values, updateimagepreview }) {
   return (
-    <div className='sm:h-[50vh] md:h-[40vh] bg-white mx-10 p-1'>
+    <div className='sm:h-[50vh] md:h-[40vh] bg-white mx-5 md:mx-10 p-1'>
 
       <div className='mt-5 p-2 w-full'>
         <label htmlFor="groupinfo.groupname">Enter Group Name</label>

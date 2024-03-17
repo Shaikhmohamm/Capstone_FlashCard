@@ -64,14 +64,15 @@ const RightSidebar = ({ currentCard }) => {
 
   return (
     <div className="w-full md:w-1/6 mt-12 md:mt-1 flex flex-row md:flex md:flex-col md:gap-8 justify-center bg-red-50 rounded-lg ">
-      <button onClick={openModel}
+      <button data-testid = 'test-model' onClick={openModel}
         className="flex justify-center bg-white font-bold md:w-full mx-1 md:mx-3 p-4 rounded-xl 
         transition-all transition-duration-500 ease-in hover:bg-red-500 hover:text-white">
         <GoShare className='hidden md:block mr-2 text-xl' />
         Share
       </button>
 
-      <button 
+      <button
+      data-testid = 'test-download-btn'
       className="flex justify-center bg-white font-bold  md:w-full mx-1 md:mx-3 p-4 rounded-xl 
       transition-all transition-duration-500 ease-in hover:bg-red-500 hover:text-white"
       onClick={handleDownload}>
@@ -80,6 +81,7 @@ const RightSidebar = ({ currentCard }) => {
       </button>
 
       <button onClick={handlePrint}
+       data-testid = 'test-print-btn'
         className="flex justify-center bg-white font-bold  md:w-full mx-1 md:mx-3 p-4 rounded-xl 
       transition-all transition-duration-500 ease-in hover:bg-red-500 hover:text-white">
         <PiPrinter className='hidden md:block mr-2 text-xl' />

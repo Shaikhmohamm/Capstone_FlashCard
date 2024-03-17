@@ -13,12 +13,12 @@ const Modal = ({ setShowModal }) => {
 
 	return (
 		<div
-			data-testid="test-model"
+			data-testid="test-modal"
 			className="overflow-hidden z-50 w-[100vw] h-[100vh] flex items-center justify-center absolute top-0 left-0 bg-[#000000ce]">
 			<div className="w-11/12 h-[35%] relative rounded-xl bg-white p-5 md:w-fit md:h-fit">
 				{/* Close modal button */}
 				<GiTireIronCross
-					data-testid="test-close-btn"
+					data-testid="test-close-button"
 					onClick={() => setShowModal(false)}
 					className="text-red-500 hover:text-red-700 absolute right-2 top-1 text-3xl cursor-pointer transition-all duration-200 ease-linear hover:rotate-180"
 				/>
@@ -36,7 +36,7 @@ const Modal = ({ setShowModal }) => {
 					{/* Copy and share icons */}
 					<div className="flex gap-2">
 						<PiCopySimpleBold
-							data-testid="test-copy-btn"
+							data-testid="test-copy-button"
 							onClick={() => {
 								toast.success("Link copied to clipboard");
 								navigator.clipboard.writeText(window.location.href);

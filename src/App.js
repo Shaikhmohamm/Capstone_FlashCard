@@ -5,6 +5,7 @@ import ShowFlashCard from './pages/ShowFlashCard';
 import ShowAllFlashCard from './components/ShowAllFlashCard';
 import ShowCompleteSingleCard from './components/ShowCompleteSingleCard'; // Import the component
 import Header from './components/Header';
+import Error from './components/Error'
 import { Toaster } from 'react-hot-toast';
 
 function App() {
@@ -18,6 +19,8 @@ function App() {
           <Route index element={<ShowAllFlashCard />} />
           <Route path=":id" element={<ShowCompleteSingleCard />} /> {/* Route for ShowCompleteSingleCard */}
         </Route>
+        {/* Route for 404 Not Found */}
+        <Route path="*" element={<Error />} />
       </Routes>
    </div>
   )

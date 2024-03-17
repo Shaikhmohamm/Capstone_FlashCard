@@ -13,7 +13,7 @@ function ShowAllFlashCard() {
   // Defining a state to show all cards or subset
   const [showAllCards, setShowAllCards] = useState(false);
 
-  // Determine the data to display based on the showAllCards state
+  // Determine the data to display based on the showAllCards state using array slice method
 	const sliceAllFlashCardData = showAllCards
   ? allFlashCardData
   : [...allFlashCardData.slice(0, 6)];

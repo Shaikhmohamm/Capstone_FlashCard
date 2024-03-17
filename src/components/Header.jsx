@@ -18,17 +18,18 @@ function Header() {
 
   return (
     <div>
-      <div className='bg-white'>
-        <img className='w-[10vw] ' src={logo} alt="logo" />
+      <div data-testid = 'test-logo' className='bg-white'>
+        <img className='w-[10vw]' src={logo} alt="logo" />
       </div>
-      <div className='p-2 mx-10'>
+      <div className='p-2 mx-5 md:mx-10'>
         <div className='mb-2'>
           <h1 className='text-2xl font-bold'>
             {title}
           </h1>
         </div>
-        <div className='flex text-lg gap-3'>
+        <div  data-testid = 'test-header' className='flex text-lg gap-3'>
           <Link to='/'
+            data-testid="test-create-flashcard-link"
             className={`font-semibold hover:text-red-500 transition-all transition-duration-300 ease-in 
           ${location.pathname === '/' ? 'text-red-500' : 'text-black'}`}
           >
@@ -43,10 +44,11 @@ function Header() {
             />
           </Link>
           <Link to='/showflashcard'
+            data-testid="test-show-flashcard-link"
             className={`font-semibold hover:text-red-500 transition-all transition-duration-300 ease-in 
           ${location.pathname === '/showflashcard' ? 'text-red-500' : 'text-black'}`}
           >
-            Show Flashcard      
+            Show Flashcard
           </Link>
         </div>
         <hr className=" border-slate-200 border-[3px] w-full" />

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { deleteFlashcard } from '../Redux/flashcardReducers'
-import { GiTireIronCross } from "react-icons/gi";
+import { IoMdClose } from "react-icons/io";
 import { IoIosArrowRoundForward } from "react-icons/io";
 
 const RenderCard = ({ data, index }) => {
@@ -39,7 +39,7 @@ const RenderCard = ({ data, index }) => {
               View Cards
             </Link>
           </div>
-          <GiTireIronCross
+          <IoMdClose
             onClick={() => dispatch(deleteFlashcard(data.id))}
             className="text-red-500 hover:text-red-700 absolute -right-2 -top-2 w-8 h-8 cursor-pointer transition-all duration-200 ease-linear hover:rotate-180"
           />
@@ -63,13 +63,13 @@ const RenderCard = ({ data, index }) => {
             to={`/showflashcard/${data.id}`} // Navigate to /showflashcard/:id
             className="w-fit h-1/5 flex gap-0 items-center text-red-500 hover:text-red-700 transition-all duration-200 ease-linear hover:gap-3"
           >
-            <span className="font-bold">View More</span>
+            <span className="font-bold">View Card</span>
             <IoIosArrowRoundForward className="w-10 h-full" />
           </Link>
-          <GiTireIronCross
+          <IoMdClose
             onClick={() => dispatch(deleteFlashcard(data.id))}
             className="text-red-500 hover:text-red-700 absolute -right-2 -top-2 w-8 h-8 cursor-pointer transition-all duration-200 ease-linear hover:rotate-180"
-          ></GiTireIronCross>
+          ></IoMdClose>
         </>
       )}
     </div>
