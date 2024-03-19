@@ -18,8 +18,8 @@ function Header() {
 
   return (
     <div>
-      <div data-testid = 'test-logo' className='bg-white'>
-        <img className='w-[10vw]' src={logo} alt="logo" />
+      <div data-testid = 'test-logo' className='bg-white p-2 h-[7.5vh] w-full'>
+        <img className='h-full w-fit' src={logo} alt="logo" />
       </div>
       <div className='p-2 mx-5 md:mx-10'>
         <div className='mb-2'>

@@ -1,8 +1,8 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import GroupInfo from '../components/GroupInfo'; // Update the import path
-import { Formik, Form } from 'formik'; // Import Formik and Form
+import GroupInfo from '../components/GroupInfo'; 
+import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 
 describe('GroupInfo', () => {

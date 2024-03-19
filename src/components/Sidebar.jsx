@@ -2,7 +2,6 @@
 
 const Sidebar = ({ terminfo, active, setActive }) => {
  
-
   return (
     <div className=" md:w-1/4 bg-white p-4 rounded-xl">
       <h2 className="md:text-xl font-bold mb-4">Flash Cards</h2>

@@ -4,7 +4,7 @@ import Modal from "../components/Modal";
 import React from "react";
 import toast from "react-hot-toast";
 
-// Mock the toast library
+
 jest.mock("react-hot-toast");
 
 // Test suite for the Modal component

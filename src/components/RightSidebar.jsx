@@ -11,6 +11,7 @@ import { PiPrinter } from "react-icons/pi";
 
 const RightSidebar = ({ currentCard }) => {
 
+  // Method to generate PDF onlclick
   const generatePDF = (groupinfo, terminfo) => {
     const pdf = new jsPDF();
 
@@ -43,12 +44,14 @@ const RightSidebar = ({ currentCard }) => {
     return pdf;
   };
 
+   // Method to download file onlclick
   const handleDownload = () => {
     const { groupinfo, terminfo } = currentCard.flashCardData;
     const pdf = generatePDF(groupinfo, terminfo);
     pdf.save('flashcards.pdf');
   };
 
+// Method to Print file onlclick
   const handlePrint = () => {
     const { groupinfo, terminfo } = currentCard.flashCardData;
     const pdf = generatePDF(groupinfo, terminfo);

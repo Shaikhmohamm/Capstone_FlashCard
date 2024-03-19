@@ -95,7 +95,7 @@ This is A Almabetter Capstone project for a Front-end module. The Primary goal o
 ```
 
 ### 🌐 Deployment Link
-      You can visit the app live from [click here] 
+      You can visit the app live from [click here](https://flashcard-generator-three.vercel.app/)
 
 ---
 
@@ -143,4 +143,4 @@ The only contributor of the project is myself details as follows
 
 ## Contact
 
-For any inquiries or support, please contact us at [GitHub](https://twitter.com/lokeshkavisth)
+For any inquiries or support, please contact us at [GitHub](https://github.com/Shaikhmohamm)

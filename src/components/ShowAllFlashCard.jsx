@@ -5,7 +5,7 @@ import RenderCard from './RenderCard'
 
 
 function ShowAllFlashCard() {
-  // Getting flash card data from Redux store
+  // Retrieving flash card data from Redux store
 
   const allFlashCardData = useSelector((state)=>state.flashcards)
   

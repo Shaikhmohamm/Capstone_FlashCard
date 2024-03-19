@@ -1,11 +1,13 @@
-// Not Found page
+// Showing Error Page
 
 import React from "react";
-
-// The `useNavigate` hook provides access to the router's `navigate` method.
 import { useNavigate } from "react-router-dom";
 
+
+
 const NotFound = () => {
+  
+  // The `useNavigate` hook provides access to the router's `navigate` method.
   const navigate = useNavigate();
 
   // The `goToHome` function navigates to the home page.

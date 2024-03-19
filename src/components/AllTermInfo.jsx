@@ -5,8 +5,10 @@ import { useState } from "react";
 import toast from 'react-hot-toast'
 
 function AllTermInfo({values, updateimagepreview}) {
+  // Initializing useState with an empty array
   const [editMode, setEditMode] = useState([]);
 
+   // Function to handle Edit mode enabling and disabling
    function handleclick(index){
     if (editMode[index]) {
         toast.success(`Edit mode enabled for Term ${index + 1}`);
