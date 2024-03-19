@@ -95,7 +95,7 @@ This is A Almabetter Capstone project for a Front-end module. The Primary goal o
 ```
 
 ### 🌐 Deployment Link
-      You can visit the app live from [click here]()
+      You can visit the app live from [click here](https://flashcardgenerator1.netlify.app/)
 
 ---
 
