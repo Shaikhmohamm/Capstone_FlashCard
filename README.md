@@ -94,7 +94,7 @@ This is A Almabetter Capstone project for a Front-end module. The Primary goal o
       └── tailwind.config.js
 ```
 
-### 🌐 Deployment Link
+-   ### 🌐 Deployment Link
       You can visit the app live from [click here](https://flashcardgenerator1.netlify.app/)
 
 ---
